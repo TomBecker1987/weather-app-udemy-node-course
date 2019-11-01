@@ -15,4 +15,4 @@ const forecast = (latitude, longitude, callback) => {
     })
 }
 
-export default forecast
+module.exports = forecast

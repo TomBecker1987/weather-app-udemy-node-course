@@ -19,4 +19,4 @@ const geocode = (address, callback) => {
     })
 }
 
-export default geocode
+module.exports = geocode
