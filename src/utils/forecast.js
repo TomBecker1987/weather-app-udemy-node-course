@@ -9,8 +9,11 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Search is incorrect!', undefined)
         } else {
+            console.log(body.daily.data[0])
+            const tempHigh = body.daily.data[0].temperatureHigh
+            const tempLow = body.daily.data[0].temperatureLow
             const {temperature, precipProbability} = body.currently
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${temperature} degrees out. These is a ${precipProbability}% chance of rain.`)
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${temperature} degrees out. These is a ${precipProbability}% chance of rain. The high is ${tempHigh} and the low is ${tempLow}`)
         }
     })
 }
